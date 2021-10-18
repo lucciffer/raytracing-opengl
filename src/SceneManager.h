@@ -19,6 +19,8 @@ public:
 	static rt_plane create_plane(glm::vec3 normal, glm::vec3 pos, rt_material material);
 	static rt_box create_box(glm::vec3 pos, glm::vec3 form, rt_material material);
 	static rt_torus create_torus(glm::vec3 pos, glm::vec2 form, rt_material material);
+	
+	
 	static rt_ring create_ring(glm::vec3 pos, float r1, float r2, rt_material material);
 	static rt_light_point create_light_point(glm::vec4 position, glm::vec3 color, float intensity, float linear_k = 0.22f, float quadratic_k = 0.2f);
 	static rt_light_direct create_light_direct(glm::vec3 direction, glm::vec3 color, float intensity);

@@ -108,10 +108,16 @@ int main()
 	// *** comment next line if you have performance issues
 	// torus
 	rt_torus torus = SceneManager::create_torus({ -9, 0.5, 6 }, { 1.0, 0.5 },
-		SceneManager::create_material({ 0.5, 0.4, 1 }, 200, 0.2));
+		SceneManager::create_material({ 1, 1, 1 }, 200, 0.1, 1.125, { 1, 0, 2 }, 1));
 	torus.quat_rotation = glm::quat(glm::vec3(glm::radians(45.f), 0, 0));
 	scene.toruses.push_back(torus);
 	update::torus = scene.toruses.size() - 1;
+
+	// rt_torus torus2 = SceneManager::create_torus({ -9, 0.5, 6 }, { 1.0, 0.5 },
+	// 	SceneManager::create_material({ 1, 1, 1 }, 200, 0.1, 1.125, { 1, 0, 2 }, 1));
+	// torus.quat_rotation = glm::quat(glm::vec3(glm::radians(45.f), 0, 0));
+	// scene.toruses.push_back(torus);
+	// update::torus = scene.toruses.size() - 1;
 
 	// cone
 	rt_material coneMaterial = SceneManager::create_material({ 234 / 255.0f, 17 / 255.0f, 82 / 255.0f }, 200, 0.2);
@@ -146,7 +152,7 @@ int main()
 
 	glWrapper.set_skybox(GLWrapper::load_cubemap(faces, false));
 
-	auto jupiterTex = glWrapper.load_texture(1, "8k_jupiter.jpg", "texture_sphere_1");
+	auto jupiterTex = glWrapper.load_texture(1, "8k_earth_daymap.jpg", "texture_sphere_1");
 	auto saturnTex = glWrapper.load_texture(2, "8k_saturn.jpg", "texture_sphere_2");
 	auto marsTex = glWrapper.load_texture(3, "2k_mars.jpg", "texture_sphere_3");
 	auto ringTex = glWrapper.load_texture(4, "8k_saturn_ring_alpha.png", "texture_ring");
@@ -242,5 +248,8 @@ void update_scene(scene_container& scene, float deltaTime, float time)
 	{
 		rt_torus* torus = &scene.toruses[update::torus];
 		torus->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(0, 1, 0));
+		// rt_torus* torus2 = &scene.toruses[update::torus];
+		// torus2->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(1, 0, 0));
+	
 	}
 }
