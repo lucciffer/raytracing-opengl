@@ -75,6 +75,6 @@ cmake --build .
 ![](media/v3.png)
 <!-- ![](media/animation.gif) -->
 
-With Earth's texture on one of the spheres  
+### With Earth's texture on one of the spheres  
 ![](media/earth1.png)
 ![](media/earth2.png)
