@@ -68,9 +68,13 @@ cmake --build .
 ./rt/rt
 ```
 
-### Screenshots
+### Results screenshots
 
 <!-- ![](media/v2.png)   -->
 ![](media/v1.png)  
 ![](media/v3.png)
 <!-- ![](media/animation.gif) -->
+
+With Earth's texture on one of the spheres  
+![](media/earth1.png)
+![](media/earth2.png)
