@@ -67,6 +67,11 @@ cmake --build .
 ```
 ./rt/rt
 ```
+OR
+
+```
+sh run.sh
+```
 
 ### Results screenshots
 
