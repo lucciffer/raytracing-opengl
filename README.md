@@ -53,6 +53,11 @@ cd bin
 cmake ..
 cmake --build .
 ```
+
+### Run  
+```
+./rt/rt
+```
 #### GLFW for linux:
 ```sh
 sudo apt install libglfw3-dev
