@@ -4,8 +4,8 @@
 #include "SceneManager.h"
 #include "Surface.h"
 
-static int wind_width = 1280;
-static int wind_height = 720;
+static int wind_width = 1400;
+static int wind_height = 800;
 
 void update_scene(scene_container& scene, float delta, float time);
 
@@ -48,8 +48,11 @@ int main()
 	scene.ambient_color = glm::vec3{ 0.025, 0.025, 0.025 };
 
 	// lights
-	scene.lights_point.push_back(SceneManager::create_light_point({ 20, 30, 2, 0.1 }, { 1, 1, 1 }, 30.5));
-	scene.lights_direct.push_back(SceneManager::create_light_direct({ 3, -1, 1 }, { 1, 1, 1 }, 2.5));
+	// scene.lights_point.push_back(SceneManager::create_light_point({ 20, 30, 2, 0.1 }, { 1, 1, 1 }, 30.5));
+	// scene.lights_direct.push_back(SceneManager::create_light_direct({ 3, -1, 1 }, { 1, 1, 1 }, 2.5));
+
+	scene.lights_point.push_back(SceneManager::create_light_point({ 3, 5, 0, 0.1 }, { 1, 1, 1 }, 25.5));
+	scene.lights_direct.push_back(SceneManager::create_light_direct({ 3, 1, -1 }, { 1, 1, 1 }, 1.5));
 
 	// blue sphere
 	scene.spheres.push_back(SceneManager::create_sphere({ 2, 0, 6 }, 1,
@@ -59,7 +62,7 @@ int main()
 		SceneManager::create_material({ 1, 0, 0 }, 100, 0.1), true));
 	// transparent sphere
 	scene.spheres.push_back(SceneManager::create_sphere({ 0.5, 2, 6 }, 1,
-		SceneManager::create_material({ 1, 1, 1 }, 200, 0.1, 1.125, { 1, 0, 2 }, 1), true));
+		SceneManager::create_material({ 0, 0, 1 }, 200, 0.1, 1.125, { 1, 0, 2 }, 1), true));
 
 	// jupiter
 	rt_sphere jupiter = SceneManager::create_sphere({}, 5000,
@@ -113,11 +116,11 @@ int main()
 	scene.toruses.push_back(torus);
 	update::torus = scene.toruses.size() - 1;
 
-	rt_torus torus2 = SceneManager::create_torus({ -9, 0.5, 6 }, { 1.0, 0.5 },
-		SceneManager::create_material({ 0, 0, 1 }, 100, 1.1, 2.125, { 1, 0, 2 }, 1));
-	torus.quat_rotation = glm::quat(glm::vec3(glm::radians(45.f), 0, 0));
-	scene.toruses.push_back(torus);
-	update::torus = scene.toruses.size() - 1;
+	// rt_torus torus2 = SceneManager::create_torus({ -9, 0.5, 6 }, { 1.0, 0.5 },
+	// 	SceneManager::create_material({ 0, 0, 1 }, 100, 1.1, 2.125, { 1, 0, 2 }, 1));
+	// torus.quat_rotation = glm::quat(glm::vec3(glm::radians(45.f), 0, 0));
+	// scene.toruses.push_back(torus);
+	// update::torus = scene.toruses.size() - 1;
 
 	// cone
 	rt_material coneMaterial = SceneManager::create_material({ 234 / 255.0f, 17 / 255.0f, 82 / 255.0f }, 200, 0.2);
@@ -247,9 +250,9 @@ void update_scene(scene_container& scene, float deltaTime, float time)
 	if (update::torus != -1)
 	{
 		rt_torus* torus = &scene.toruses[update::torus];
-		torus->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(0, 1, 0));
-		rt_torus* torus2 = &scene.toruses[update::torus];
-		torus2->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(1, 0, 0));
+		torus->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(0, 0, 1));
+		// rt_torus* torus2 = &scene.toruses[update::torus];
+		// torus2->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(1, 0, 0));
 	
 	}
 }
