@@ -46,6 +46,15 @@ Movement:
 * GLM (included)
 * GLFW, should be automatically found by CMake (win64 binaries included)
 
+#### GLFW for linux:
+```sh
+sudo apt install libglfw3-dev
+```
+#### GLFW for windows:
+GLFW binaries included (common/GLFW), glfw3.lib compiled for Visual Studio 2019
+
+You can use binaries for other VS versions from GLFW/win-x64 directory, or compile by yourself.
+
 ### Build
 ```sh
 mkdir bin
@@ -58,16 +67,19 @@ cmake --build .
 ```
 ./rt/rt
 ```
-#### GLFW for linux:
-```sh
-sudo apt install libglfw3-dev
+OR
+
 ```
-#### GLFW for windows:
-GLFW binaries included (common/GLFW), glfw3.lib compiled for Visual Studio 2019
+sh run.sh
+```
 
-You can use binaries for other VS versions from GLFW/win-x64 directory, or compile by yourself.
+### Results screenshots
 
-### Screenshots
+<!-- ![](media/v2.png)   -->
+![](media/v1.png)  
+![](media/v3.png)
+<!-- ![](media/animation.gif) -->
 
-![](media/v2.png)
-![](media/animation.gif)
+### With Earth's texture on one of the spheres  
+![](media/earth1.png)
+![](media/earth2.png)
