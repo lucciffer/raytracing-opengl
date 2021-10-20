@@ -84,5 +84,9 @@ sh run.sh
 ![](media/earth1.png)
 ![](media/earth2.png)
 
+<<<<<<< HEAD
 <!-- test comment -->
 <!-- new test comment -->
+=======
+<!-- test comment -->
+>>>>>>> 21d32d493e6af8cedb6bddcbf151fd7c77714205
