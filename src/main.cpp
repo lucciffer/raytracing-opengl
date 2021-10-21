@@ -250,7 +250,7 @@ void update_scene(scene_container& scene, float deltaTime, float time)
 	if (update::torus != -1)
 	{
 		rt_torus* torus = &scene.toruses[update::torus];
-		torus->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(0, 0, 1));
+		torus->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(0, 1, 0));
 		// rt_torus* torus2 = &scene.toruses[update::torus];
 		// torus2->quat_rotation *= glm::angleAxis(deltaTime, glm::vec3(1, 0, 0));
 	
