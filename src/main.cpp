@@ -122,23 +122,23 @@ int main()
 	// scene.toruses.push_back(torus);
 	// update::torus = scene.toruses.size() - 1;
 
-	// cone
-	rt_material coneMaterial = SceneManager::create_material({ 234 / 255.0f, 17 / 255.0f, 82 / 255.0f }, 200, 0.2);
-	rt_surface cone = SurfaceFactory::GetEllipticCone(1 / 3.0f, 1 / 3.0f, 1, coneMaterial);
-	cone.pos = { -5, 4, 6 };
-	cone.quat_rotation = glm::quat(glm::vec3(glm::radians(90.f), 0, 0));
-	cone.yMin = -1;
-	cone.yMax = 4;
-	scene.surfaces.push_back(cone);
+	// // cone
+	// rt_material coneMaterial = SceneManager::create_material({ 234 / 255.0f, 17 / 255.0f, 82 / 255.0f }, 200, 0.2);
+	// rt_surface cone = SurfaceFactory::GetEllipticCone(1 / 3.0f, 1 / 3.0f, 1, coneMaterial);
+	// cone.pos = { -5, 4, 6 };
+	// cone.quat_rotation = glm::quat(glm::vec3(glm::radians(90.f), 0, 0));
+	// cone.yMin = -1;
+	// cone.yMax = 4;
+	// scene.surfaces.push_back(cone);
 
-	// cylinder
-	rt_material cylinderMaterial = SceneManager::create_material({ 200 / 255.0f, 255 / 255.0f, 0 / 255.0f }, 200, 0.2);
-	rt_surface cylinder = SurfaceFactory::GetEllipticCylinder(1 / 2.0f, 1 / 2.0f, cylinderMaterial);
-	cylinder.pos = { 5, 0, 6 };
-	cylinder.quat_rotation = glm::quat(glm::vec3(glm::radians(90.f), 0, 0));
-	cylinder.yMin = -1;
-	cylinder.yMax = 1;
-	scene.surfaces.push_back(cylinder);
+	// // cylinder
+	// rt_material cylinderMaterial = SceneManager::create_material({ 200 / 255.0f, 255 / 255.0f, 0 / 255.0f }, 200, 0.2);
+	// rt_surface cylinder = SurfaceFactory::GetEllipticCylinder(1 / 2.0f, 1 / 2.0f, cylinderMaterial);
+	// cylinder.pos = { 5, 0, 6 };
+	// cylinder.quat_rotation = glm::quat(glm::vec3(glm::radians(90.f), 0, 0));
+	// cylinder.yMin = -1;
+	// cylinder.yMax = 1;
+	// scene.surfaces.push_back(cylinder);
 
 	rt_defines defines = scene.get_defines();
 	glWrapper.init_shaders(defines);
